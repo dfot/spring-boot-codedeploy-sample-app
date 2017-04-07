@@ -1,0 +1,24 @@
+version: 0.0
+os: linux
+files:
+  - source: sample-app.jar
+    destination: /var/sample-app/sample-app.jar
+permissions:
+  - object: /var/sample-app
+    owner: sample-app
+    group: sample-app
+hooks:
+  BeforeInstall:
+    - location: scripts/install-depedencies.sh
+      timeout: 180
+    - location: scripts/cleanup-previous-deployments.sh
+      timeout: 180
+  AfeterInstall:
+    -	location: scripts/install-service.sh
+      timeout: 180
+  ApplicationStart:
+    - location: scripts/start-service.sh
+      timeout: 360
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 360
