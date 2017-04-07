@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: sample-app.jar
+  - source: sample-app-1.0.jar
     destination: /var/sample-app/sample-app.jar
 permissions:
   - object: /var/sample-app
@@ -19,6 +19,7 @@ hooks:
   ApplicationStart:
     - location: scripts/start-service.sh
       timeout: 360
+      runas
   ValidateService:
     - location: scripts/validate.sh
       timeout: 360
