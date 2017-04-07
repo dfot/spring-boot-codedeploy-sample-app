@@ -5,8 +5,8 @@ files:
     destination: /var/sample-app/sample-app.jar
 permissions:
   - object: /var/sample-app
-    owner: sample-app
-    group: sample-app
+    owner: sample-app-user
+    group: sample-app-user
 hooks:
   BeforeInstall:
     - location: scripts/install-depedencies.sh
@@ -19,7 +19,6 @@ hooks:
   ApplicationStart:
     - location: scripts/start-service.sh
       timeout: 360
-      runas
   ValidateService:
     - location: scripts/validate.sh
       timeout: 360
