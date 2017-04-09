@@ -8,17 +8,26 @@ permissions:
     owner: sample-app-user
     group: sample-app-user
 hooks:
+  ApplicationStop:
+    - location: scripts/stop-service.sh
+      timeout: 60
+      runas: root
+    - location: scripts/backup-previous-deployments.sh
+      timeout: 60
+      runas: root
   BeforeInstall:
-    - location: scripts/install-depedencies.sh
+    - location: scripts/install-dependencies.sh
       timeout: 180
-    - location: scripts/cleanup-previous-deployments.sh
-      timeout: 180
+      runas: root
   AfeterInstall:
     -	location: scripts/install-service.sh
-      timeout: 180
+      timeout: 60
+      runas: root
   ApplicationStart:
     - location: scripts/start-service.sh
-      timeout: 360
+      timeout: 180
+      runas: root
   ValidateService:
     - location: scripts/validate.sh
-      timeout: 360
+      timeout: 180
+      runas: root

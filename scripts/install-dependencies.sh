@@ -4,11 +4,14 @@
 
 set -e
 
-yum -y update
+# yum update -y
 
-{ which java; } || { yum install java; }
+# install java if needed
+# TODO java8
+{ which java; } || { yum install java -y; }
 
-useradd sample-app-user
+# create app user
+useradd --shell /sbin/nologin --system --user-group sample-app-user
 
 # create app directory
 mkdir -p /var/sample-app

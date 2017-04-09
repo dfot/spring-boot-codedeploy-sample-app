@@ -7,4 +7,5 @@ set -e
 if (( $(ps -ef | grep -v grep | grep sample-app | wc -l) > 0 ))
 then
     service sample-app stop
+    echo "Service stopped."
 fi

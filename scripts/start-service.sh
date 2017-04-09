@@ -5,3 +5,4 @@
 set -e
 
 service sample-app start
+echo "Service started."

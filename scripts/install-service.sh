@@ -4,12 +4,13 @@
 
 set -e
 
-chown sample-app-user:sample-app-user sample-app.jar
+chown sample-app-user:sample-app-user /var/sample-app/sample-app.jar
 
 # protect application from modifications
-chmod 500 sample-app.jar
-sudo chattr +i sample-app.jar
+chmod 500 /var/sample-app/sample-app.jar
+#chattr +i /var/sample-app/sample-app.jar
 
 # create symlink to init.d
 ln -s /var/sample-app/sample-app.jar /etc/init.d/sample-app
 chkconfig sample-app on
+echo "Service installed."
