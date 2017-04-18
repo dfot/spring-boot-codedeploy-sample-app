@@ -1,4 +1,4 @@
-# spring-boot-codedeploy-sample-app
+# Spring Boot Sample App for CodeDeploy
 Sample application demonstrating Spring Boot deployment with AWS CodeDeploy
 
 ### Who do I talk to?
