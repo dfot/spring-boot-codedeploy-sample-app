@@ -1,101 +1,18 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Metadata": {
-        "AWS::CloudFormation::Designer": {
-            "a85f6aee-1234-4b30-9f3e-20b7af6ae9b7": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 220,
-                    "y": 40
-                },
-                "z": 0,
-                "embeds": []
-            },
-            "315d4de4-b31a-41c3-ad51-63f13505a0cd": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 330,
-                    "y": 40
-                },
-                "z": 0,
-                "embeds": []
-            },
-            "95a3d340-eec2-43b2-b1e1-9833e3cbe0db": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 440,
-                    "y": 40
-                },
-                "z": 0,
-                "embeds": [],
-                "isassociatedwith": [
-                    "315d4de4-b31a-41c3-ad51-63f13505a0cd"
-                ],
-                "ismemberof": [
-                    "a85f6aee-1234-4b30-9f3e-20b7af6ae9b7"
-                ],
-                "isrelatedto": [
-                    "b5b4d67a-2404-44e2-bc90-93f55b8449ff"
-                ]
-            },
-            "b5b4d67a-2404-44e2-bc90-93f55b8449ff": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 540,
-                    "y": 40
-                },
-                "z": 0,
-                "embeds": []
-            },
-            "f90f287a-9539-41d8-a6f8-9814251ebc9a": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": 220,
-                    "y": 130
-                },
-                "z": 0,
-                "embeds": []
-            }
-        }
-    },
     "Resources": {
         "SampleAppApplication": {
             "Type": "AWS::CodeDeploy::Application",
             "Properties": {
                 "ApplicationName": "SampleApp"
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "a85f6aee-1234-4b30-9f3e-20b7af6ae9b7"
-                }
             }
-        },
+          },
         "SampleAppConfig": {
             "Type": "AWS::CodeDeploy::DeploymentConfig",
             "Properties": {
                 "MinimumHealthyHosts": {
                     "Type": "HOST_COUNT",
                     "Value": "1"
-                }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "315d4de4-b31a-41c3-ad51-63f13505a0cd"
                 }
             }
         },
@@ -123,11 +40,6 @@
                         "Arn"
                     ]
                 }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "95a3d340-eec2-43b2-b1e1-9833e3cbe0db"
-                }
             }
         },
         "SampleAppCodeDeployRole": {
@@ -145,21 +57,11 @@
                         }
                     ]
                 }
-            },
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "b5b4d67a-2404-44e2-bc90-93f55b8449ff"
-                }
             }
         },
         "S3Bucket": {
             "Type": "AWS::S3::Bucket",
-            "Properties": {},
-            "Metadata": {
-                "AWS::CloudFormation::Designer": {
-                    "id": "f90f287a-9539-41d8-a6f8-9814251ebc9a"
-                }
-            }
+            "Properties": {}
         }
     },
     "Parameters": {
